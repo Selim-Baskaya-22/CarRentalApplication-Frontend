@@ -16,3 +16,4 @@ export class RentalDetailsService {
     return this.httpClient.get<ListResponseModel<RentalDetails>>(this.apiUrl)
   }
 }
+ 
