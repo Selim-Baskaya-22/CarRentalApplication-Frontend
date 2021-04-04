@@ -1,10 +1,12 @@
 
 <ul class="list-group">
-    <li class="list-group-item">an item</li>
-    <li class="list-group-item">a second item</li>
-    <li class="list-group-item">a third item</li>
-    <li class="list-group-item">a fourth item</li>
-    <li class="list-group-item">and a fifth one</li>
+    <li [class]="getAllBrandClass()" routerLink="/car">Tümünü Listele</li>
+    <li (click)="setCurrentBrand(brand)"
+    routerLink="/car/brand/{{brand.brandId}}"
+    *ngFor="let brand of brands" 
+    [class]="getCurrentBrandClass(brand)">
+    {{brand.brandName}}</li>
 </ul>
 
+<h5 *ngIf="currentBrand">{{ currentBrand.brandName }} seçtiniz</h5>
 

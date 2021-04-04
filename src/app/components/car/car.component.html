@@ -12,14 +12,21 @@
         <th>Model</th>
         <th>Günlük Fiyatı</th>
         <th>Açıklama</th>
+        <th>Detay</th>
       </tr>
     </thead>
-    <tr *ngFor="let cars of car">
+    <tr 
+     *ngFor="let cars of car">
       <td>{{ cars.carId }}</td>
       <td>{{ cars.brandId }}</td>
       <td>{{ cars.colorId }}</td>
       <td>{{ cars.modelYear }}</td>
-      <td>{{ cars.dailyPrice}}</td>
+      <td>{{ cars.dailyPrice}}€</td>
       <td>{{ cars.description}}</td>
+      <br>
+      <button (click)="setButtonDetail(currentCar)"
+      routerLink="/car/carDetails/{{cars.carId}}" 
+      [class]="getCurrentButtonClass(cars)"
+      type="button" class="btn btn-primary">Detaya Git</button>
     </tr>
   </table>
